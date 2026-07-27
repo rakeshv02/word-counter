@@ -1,62 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Word Counter — Tabutility</title>
+<meta name="description" content="Free word counter. Count words, characters, sentences and paragraphs. Estimate reading time. Works instantly as you type."/>
+<meta name="keywords" content="word counter, character counter, word count tool, count words online, reading time calculator"/>
+<link rel="canonical" href="https://word-counter.tabutility.com/"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>"/>
+<meta property="og:title" content="Word Counter"/>
+<meta property="og:description" content="Count words, characters, sentences and paragraphs. Get reading time estimates instantly."/>
+<meta property="og:url" content="https://word-counter.tabutility.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Tabutility"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Word Counter"/>
+<meta name="twitter:description" content="Count words, characters, sentences and paragraphs instantly."/>
+<meta name="robots" content="index, follow"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-78VZWJ5B1W');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter","url":"https://word-counter.tabutility.com/","description":"Free word counter. Count words, characters, sentences and paragraphs. Estimate reading time.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"Content Tools","item":"https://tabutility.com"},{"@type":"ListItem","position":3,"name":"Word Counter","item":"https://word-counter.tabutility.com/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does my text get saved?","acceptedAnswer":{"@type":"Answer","text":"No — all processing is done in your browser. Your text never leaves your device."}},{"@type":"Question","name":"Is there a word limit?","acceptedAnswer":{"@type":"Answer","text":"No hard limit — the counter handles large documents."}},{"@type":"Question","name":"Is the Word Counter free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up needed."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — works on any device."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;border-bottom:1px solid #334155;padding:14px 24px;display:flex;align-items:center;gap:16px}
+nav a{color:#94a3b8;text-decoration:none;font-size:14px}
+nav a:hover{color:#f1f5f9}
+nav .brand{color:#38bdf8;font-weight:700;font-size:18px}
+.ad-banner{background:#1e293b;border-bottom:1px solid #334155;padding:4px;text-align:center}
+#app{max-width:800px;margin:8px auto;padding:0 16px 40px}
+h1{font-size:26px;font-weight:700;color:#f1f5f9;margin:24px 0 6px;text-align:center}
+.subtitle{color:#94a3b8;font-size:14px;text-align:center;margin-bottom:20px}
+.toolbar{display:flex;justify-content:flex-end;margin-bottom:8px;gap:8px}
+.clear-btn{background:transparent;border:1px solid #334155;color:#94a3b8;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
+.clear-btn:hover{border-color:#f87171;color:#f87171}
+.copy-btn{background:transparent;border:1px solid #334155;color:#94a3b8;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
+.copy-btn:hover{border-color:#38bdf8;color:#38bdf8}
+textarea{width:100%;background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;color:#f1f5f9;font-size:15px;line-height:1.7;outline:none;resize:vertical;min-height:260px;font-family:inherit;transition:border-color .2s}
+textarea:focus{border-color:#38bdf8}
+textarea::placeholder{color:#475569}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.stat-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px 12px;text-align:center;transition:border-color .2s}
+.stat-card:hover{border-color:#38bdf8}
+.stat-card .val{font-size:28px;font-weight:700;color:#38bdf8;line-height:1}
+.stat-card .lbl{font-size:11px;color:#94a3b8;margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
+.time-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.time-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;text-align:center}
+.time-card .val{font-size:22px;font-weight:700;color:#a78bfa}
+.time-card .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.char-detail{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.char-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:14px;text-align:center}
+.char-card .val{font-size:22px;font-weight:700;color:#34d399}
+.char-card .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:500px){.stats-grid{grid-template-columns:repeat(2,1fr)}.time-grid,.char-detail{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
+<div class="ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<div id="app">
+  <h1>📝 Word Counter</h1>
+  <p class="subtitle">Paste or type your text — stats update instantly</p>
+  <div class="toolbar">
+    <button class="copy-btn" onclick="copyText()">📋 Copy</button>
+    <button class="clear-btn" onclick="clearText()">✕ Clear</button>
+  </div>
+  <textarea id="text-input" placeholder="Start typing or paste your text here..." oninput="updateStats()"></textarea>
 
-    <!-- Primary SEO -->
-    <title>Word Counter — Free Online Word & Character Count Tool | Tabutility</title>
-    <meta name="description" content="Free word counter tool. Count words, characters, sentences, paragraphs, and reading time instantly. Includes a character limit checker for Twitter, LinkedIn, and more. No sign-up, runs in your browser." />
-    <meta name="keywords" content="word counter, character counter, word count, character count, word counter online, free word counter, word count tool, reading time calculator" />
-    <link rel="canonical" href="https://word-counter.tabutility.com/" />
+  <div class="stats-grid">
+    <div class="stat-card"><div class="val" id="s-words">0</div><div class="lbl">Words</div></div>
+    <div class="stat-card"><div class="val" id="s-sentences">0</div><div class="lbl">Sentences</div></div>
+    <div class="stat-card"><div class="val" id="s-paragraphs">0</div><div class="lbl">Paragraphs</div></div>
+  </div>
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://word-counter.tabutility.com/" />
-    <meta property="og:title"       content="Word Counter — Free Online Word & Character Count Tool" />
-    <meta property="og:description" content="Count words, characters, sentences, paragraphs, and reading time instantly. Free, no sign-up, runs entirely in your browser." />
-    <meta property="og:site_name"   content="Tabutility" />
+  <div class="char-detail">
+    <div class="char-card"><div class="val" id="s-chars">0</div><div class="lbl">Characters (with spaces)</div></div>
+    <div class="char-card"><div class="val" id="s-chars-no">0</div><div class="lbl">Characters (no spaces)</div></div>
+  </div>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary" />
-    <meta name="twitter:title"       content="Word Counter — Free Online Word & Character Count Tool" />
-    <meta name="twitter:description" content="Count words, characters, sentences, paragraphs, and reading time instantly. Free, no sign-up, runs entirely in your browser." />
+  <div class="time-grid">
+    <div class="time-card"><div class="val" id="s-read">0 sec</div><div class="lbl">⏱ Reading Time (200 wpm)</div></div>
+    <div class="time-card"><div class="val" id="s-speak">0 sec</div><div class="lbl">🎙️ Speaking Time (130 wpm)</div></div>
+  </div>
+</div>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>" />
+<div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:24px;margin-bottom:8px;padding:0 16px">
+  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
+    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+      <a href="https://typing-speed-test.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Typing Speed Test</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Content Tools</div>
+      </a>
+      <a href="https://markdown-to-html.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Markdown to HTML</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Content Tools</div>
+      </a>
+      <a href="https://url-encoder.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">URL Encoder</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Developer Tools</div>
+      </a>
+      <a href="https://uuid-generator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">UUID Generator</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Developer Tools</div>
+      </a>
+    </div>
+  </div>
+</div>
 
-    <!-- Robots -->
-    <meta name="robots" content="index, follow" />
+<div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:8px;margin-bottom:24px;padding:0 16px">
+  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
+    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Does my text get saved?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">No — all processing is done in your browser. Your text never leaves your device.</div>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is there a word limit?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">No hard limit — the counter handles large documents.</div>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is this free?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — completely free, no sign-up needed.</div>
+    </div>
+    <div style="padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Works on mobile?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — works on any device.</div>
+    </div>
+  </div>
+</div>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+<div style="text-align:center;padding:8px">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-78VZWJ5B1W');
-    </script>
+<script>
+function updateStats() {
+  const text = document.getElementById('text-input').value;
+  const trimmed = text.trim();
 
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Word Counter",
-      "url": "https://word-counter.tabutility.com",
-      "description": "Free online word counter. Count words, characters, sentences, paragraphs, and reading time instantly.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "provider": { "@type": "Organization", "name": "Tabutility", "url": "https://tabutility.com" }
-    }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  // Words
+  const words = trimmed === '' ? 0 : trimmed.split(/\s+/).filter(w => w.length > 0).length;
+
+  // Characters
+  const chars = text.length;
+  const charsNoSpaces = text.replace(/\s/g, '').length;
+
+  // Sentences (split on . ! ?)
+  const sentences = trimmed === '' ? 0 : (trimmed.match(/[^.!?]*[.!?]+/g) || []).length || (trimmed.length > 0 ? 1 : 0);
+
+  // Paragraphs (split on blank lines)
+  const paragraphs = trimmed === '' ? 0 : trimmed.split(/\n\s*\n/).filter(p => p.trim().length > 0).length || (trimmed.length > 0 ? 1 : 0);
+
+  // Reading / speaking time
+  const readSecs = Math.ceil((words / 200) * 60);
+  const speakSecs = Math.ceil((words / 130) * 60);
+
+  document.getElementById('s-words').textContent = words.toLocaleString();
+  document.getElementById('s-sentences').textContent = sentences.toLocaleString();
+  document.getElementById('s-paragraphs').textContent = paragraphs.toLocaleString();
+  document.getElementById('s-chars').textContent = chars.toLocaleString();
+  document.getElementById('s-chars-no').textContent = charsNoSpaces.toLocaleString();
+  document.getElementById('s-read').textContent = formatTime(readSecs);
+  document.getElementById('s-speak').textContent = formatTime(speakSecs);
+}
+
+function formatTime(secs) {
+  if (secs < 60) return secs + ' sec';
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m + ' min' + (s > 0 ? ' ' + s + ' sec' : '');
+}
+
+function clearText() {
+  document.getElementById('text-input').value = '';
+  updateStats();
+  document.getElementById('text-input').focus();
+}
+
+function copyText() {
+  const text = document.getElementById('text-input').value;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy', 1500);
+  });
+}
+</script>
+</body>
 </html>

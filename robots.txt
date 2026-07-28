@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://word-counter.tabutility.com/sitemap.xml

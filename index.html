@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Word Counter — Tabutility</title>
@@ -17,8 +21,7 @@
 <meta name="twitter:title" content="Word Counter"/>
 <meta name="twitter:description" content="Count words, characters, sentences and paragraphs instantly."/>
 <meta name="robots" content="index, follow"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-78VZWJ5B1W');</script>
+<script>window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-78VZWJ5B1W');});</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter","url":"https://word-counter.tabutility.com/","description":"Free word counter. Count words, characters, sentences and paragraphs. Estimate reading time.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"Content Tools","item":"https://tabutility.com"},{"@type":"ListItem","position":3,"name":"Word Counter","item":"https://word-counter.tabutility.com/"}]}</script>
@@ -57,7 +60,8 @@ textarea::placeholder{color:#475569}
 .char-card .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
 @media(max-width:500px){.stats-grid{grid-template-columns:repeat(2,1fr)}.time-grid,.char-detail{grid-template-columns:1fr}}
 </style>
-</head>
+  <meta name="theme-color" content="#1a1a2e" />
+  </head>
 <body>
 <nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
 <div class="ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
@@ -196,6 +200,27 @@ function copyText() {
     setTimeout(() => btn.textContent = '📋 Copy', 1500);
   });
 }
+</script>
+<script>
+(function(){
+  var ins=document.querySelectorAll('.adsbygoogle:not([data-lazy-done])');
+  var belowFold=Array.from(ins).slice(1);
+  if(!belowFold.length)return;
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries,obs){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          (adsbygoogle=window.adsbygoogle||[]).push({});
+          e.target.setAttribute('data-lazy-done','1');
+          obs.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'200px'});
+    belowFold.forEach(function(el){io.observe(el);});
+  } else {
+    belowFold.forEach(function(){(adsbygoogle=window.adsbygoogle||[]).push({});});
+  }
+})();
 </script>
 </body>
 </html>

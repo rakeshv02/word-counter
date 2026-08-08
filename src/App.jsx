@@ -93,10 +93,10 @@ export default function WordCounter() {
             { label: 'No spaces',       value: stats.charsNoSpaces.toLocaleString(),   color: '#f59e0b', light: '#FFFBEB' },
             { label: 'Sentences',       value: stats.sentences.toLocaleString(),       color: '#ec4899', light: '#FDF2F8' },
             { label: 'Paragraphs',      value: stats.paragraphs.toLocaleString(),      color: '#8b5cf6', light: '#F7F1FF' },
-            { label: 'Reading time',    value: fmtTime(stats.readingTime),             color: '#334155', light: '#F0F9FF' },
+            { label: 'Reading time',    value: fmtTime(stats.readingTime),             color: '#e2e8f0', light: '#F0F9FF' },
             { label: 'Speaking time',   value: fmtTime(stats.speakingTime),            color: '#27C281', light: '#EEFBF5' },
           ].map(s => (
-            <div key={s.label} style={{ background: 'white', borderRadius: 16, padding: '18px 16px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', textAlign: 'center' }}>
+            <div key={s.label} style={{ background: 'white', borderRadius: 16, padding: '18px 16px', border: '1px solid #f8f7f4', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', textAlign: 'center' }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: s.color, marginBottom: 4 }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', fontWeight: 500 }}>{s.label}</div>
             </div>
@@ -104,7 +104,7 @@ export default function WordCounter() {
         </div>
 
         {/* Character limit checker */}
-        <div style={{ background: 'white', borderRadius: 16, padding: '20px 24px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+        <div style={{ background: 'white', borderRadius: 16, padding: '20px 24px', border: '1px solid #f8f7f4', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
           <p style={{ margin: '0 0 12px', fontSize: 13, fontWeight: 700, color: '#f8f7f4' }}>Character limit checker</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {LIMITS.map(l => (
@@ -126,7 +126,7 @@ export default function WordCounter() {
                   {charsOver > 0 ? `${charsOver} over limit` : `${limitData.max - stats.chars} remaining`}
                 </span>
               </div>
-              <div style={{ height: 8, background: '#0f172a', borderRadius: 999, overflow: 'hidden' }}>
+              <div style={{ height: 8, background: '#f8f7f4', borderRadius: 999, overflow: 'hidden' }}>
                 <div style={{ height: '100%', width: `${pct}%`, background: barColor, borderRadius: 999, transition: 'all 0.3s' }} />
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function WordCounter() {
 
         {/* Textarea */}
         <div style={{ background: 'white', borderRadius: 20, border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', overflow: 'hidden' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 20px', borderBottom: '1px solid #0f172a' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 20px', borderBottom: '1px solid #f8f7f4' }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: '#64748b' }}>Your text</span>
             <div style={{ display: 'flex', gap: 8 }}>
               <button onClick={handleCopy} disabled={!text}
@@ -157,7 +157,7 @@ export default function WordCounter() {
         </div>
 
         {/* Tips */}
-        <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+        <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: '1px solid #f8f7f4', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
           <h2 style={{ margin: '0 0 16px', fontSize: 16, fontWeight: 700, color: '#f8f7f4' }}>Quick reference — common word counts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
             {[
@@ -181,7 +181,7 @@ export default function WordCounter() {
       </div>
 
       {/* ── Footer ── */}
-      <footer style={{ background: 'white', borderTop: '1px solid #0f172a', padding: '24px', textAlign: 'center', fontSize: 13, color: '#64748b' }}>
+      <footer style={{ background: 'white', borderTop: '1px solid #f8f7f4', padding: '24px', textAlign: 'center', fontSize: 13, color: '#64748b' }}>
         <a href="https://tabutility.com" style={{ color: '#64748b', textDecoration: 'none', fontWeight: 600 }}>Tabutility.com</a>
         {' · '}Free browser-based tools · No sign-up · No tracking
       </footer>

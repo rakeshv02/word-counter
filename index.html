@@ -7,6 +7,7 @@
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <title>Word Counter — Tabutility</title>
 <meta name="description" content="Free word counter. Count words, characters, sentences and paragraphs. Estimate reading time. Works instantly as you type."/>
 <meta name="keywords" content="word counter, character counter, word count tool, count words online, reading time calculator"/>
@@ -28,40 +29,48 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does my text get saved?","acceptedAnswer":{"@type":"Answer","text":"No — all processing is done in your browser. Your text never leaves your device."}},{"@type":"Question","name":"Is there a word limit?","acceptedAnswer":{"@type":"Answer","text":"No hard limit — the counter handles large documents."}},{"@type":"Question","name":"Is the Word Counter free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up needed."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — works on any device."}}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
-nav{background:#1e293b;border-bottom:1px solid #334155;padding:14px 24px;display:flex;align-items:center;gap:16px}
-nav a{color:#94a3b8;text-decoration:none;font-size:14px}
-nav a:hover{color:#f1f5f9}
-nav .brand{color:#38bdf8;font-weight:700;font-size:18px}
-.ad-banner{background:#1e293b;border-bottom:1px solid #334155;padding:4px;text-align:center}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#0f172a;min-height:100vh}
+nav{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:14px 24px;display:flex;align-items:center;gap:16px}
+nav a{color:#64748b;text-decoration:none;font-size:14px}
+nav a:hover{color:#0f172a}
+nav .brand{color:#0f172a;font-weight:700;font-size:18px}
+.ad-banner{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:4px;text-align:center}
 #app{max-width:800px;margin:8px auto;padding:0 16px 40px}
-h1{font-size:26px;font-weight:700;color:#f1f5f9;margin:24px 0 6px;text-align:center}
-.subtitle{color:#94a3b8;font-size:14px;text-align:center;margin-bottom:20px}
+h1{font-size:26px;font-weight:700;color:#0f172a;margin:24px 0 6px;text-align:center}
+.subtitle{color:#64748b;font-size:14px;text-align:center;margin-bottom:20px}
 .toolbar{display:flex;justify-content:flex-end;margin-bottom:8px;gap:8px}
-.clear-btn{background:transparent;border:1px solid #334155;color:#94a3b8;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
+.clear-btn{background:transparent;border:1px solid #e2e8f0;color:#64748b;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
 .clear-btn:hover{border-color:#f87171;color:#f87171}
-.copy-btn{background:transparent;border:1px solid #334155;color:#94a3b8;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
-.copy-btn:hover{border-color:#38bdf8;color:#38bdf8}
-textarea{width:100%;background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;color:#f1f5f9;font-size:15px;line-height:1.7;outline:none;resize:vertical;min-height:260px;font-family:inherit;transition:border-color .2s}
-textarea:focus{border-color:#38bdf8}
+.copy-btn{background:transparent;border:1px solid #e2e8f0;color:#64748b;padding:7px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
+.copy-btn:hover{border-color:#0f172a;color:#0f172a}
+textarea{width:100%;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;color:#0f172a;font-size:15px;line-height:1.7;outline:none;resize:vertical;min-height:260px;font-family:'Inter',inherit;transition:border-color .2s}
+textarea:focus{border-color:#0f172a}
 textarea::placeholder{color:#475569}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-.stat-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px 12px;text-align:center;transition:border-color .2s}
-.stat-card:hover{border-color:#38bdf8}
-.stat-card .val{font-size:28px;font-weight:700;color:#38bdf8;line-height:1}
-.stat-card .lbl{font-size:11px;color:#94a3b8;margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
+.stat-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 12px;text-align:center;transition:border-color .2s}
+.stat-card:hover{border-color:#0f172a}
+.stat-card .val{font-size:28px;font-weight:700;color:#0f172a;line-height:1}
+.stat-card .lbl{font-size:11px;color:#64748b;margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
 .time-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.time-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;text-align:center}
+.time-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;text-align:center}
 .time-card .val{font-size:22px;font-weight:700;color:#a78bfa}
-.time-card .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.time-card .lbl{font-size:11px;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
 .char-detail{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.char-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:14px;text-align:center}
+.char-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;text-align:center}
 .char-card .val{font-size:22px;font-weight:700;color:#34d399}
-.char-card .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.char-card .lbl{font-size:11px;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
 @media(max-width:500px){.stats-grid{grid-template-columns:repeat(2,1fr)}.time-grid,.char-detail{grid-template-columns:1fr}}
 </style>
   <meta name="theme-color" content="#1a1a2e" />
-  </head>
+  <style id="tabutility-brand">
+/* empty ad slots: reserve space, no bordered box */
+.ad-banner,.ad-slot,.ad-container{background:transparent!important;border:none!important;border-bottom:none!important;box-shadow:none!important}
+ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe{visibility:hidden!important}
+ins.adsbygoogle[data-ad-status="filled"],.ad-banner ins[data-ad-status="filled"] iframe,.ad-slot ins[data-ad-status="filled"] iframe{visibility:visible!important}
+nav .brand{color:#0f172a}
+body{-webkit-font-smoothing:antialiased}
+</style>
+</head>
 <body>
 <nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
 <div class="ad-banner"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
@@ -95,44 +104,44 @@ textarea::placeholder{color:#475569}
   <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
     
 
-<div style="margin:0 auto 20px;max-width:640px;background:#0f172a;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #1e3a5f">
+<div style="margin:0 auto 20px;max-width:640px;background:#f8f7f4;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #1e3a5f">
   <span style="font-size:26px;flex-shrink:0">📖</span>
   <div style="min-width:0">
-    <div style="font-size:11px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Further Reading</div>
-    <a href="https://tabutility.com/blog/why-word-count-matters/" style="font-size:13px;font-weight:700;color:#f1f5f9;text-decoration:none;display:block;line-height:1.35" target="_blank" rel="noopener">Why Word Count Matters: A Guide for Writers and Students →</a>
+    <div style="font-size:11px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Further Reading</div>
+    <a href="https://tabutility.com/blog/why-word-count-matters/" style="font-size:13px;font-weight:700;color:#0f172a;text-decoration:none;display:block;line-height:1.35" target="_blank" rel="noopener">Why Word Count Matters: A Guide for Writers and Students →</a>
   </div>
 </div>
 
 <!-- embed-widget -->
-<div style="max-width:640px;margin:0 auto 32px;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px">
-  <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
+<div style="max-width:640px;margin:0 auto 32px;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px">
+  <h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
   <p style="font-size:13px;color:#64748b;margin-bottom:12px">Add this Word Counter to your website or blog for free — just paste this code:</p>
-  <div style="background:#0f172a;border:1px solid #334155;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;color:#7dd3fc;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://word-counter.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;Word Counter by Tabutility&quot;&gt;&lt;/iframe&gt;
+  <div style="background:#f8f7f4;border:1px solid #e2e8f0;border-radius:8px;padding:12px;font-family:'Inter',monospace;font-size:12px;color:#7dd3fc;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://word-counter.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;Word Counter by Tabutility&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:12px&quot;&gt;&lt;a href=&quot;https://word-counter.tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Word Counter&lt;/a&gt; by &lt;a href=&quot;https://tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Tabutility&lt;/a&gt;&lt;/p&gt;</div>
-  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#38bdf8;color:#0f172a;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#0f172a;color:#f8f7f4;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
   <span style="font-size:11px;color:#475569;margin-left:12px">Free to use — the credit link helps others find the tool</span>
 </div>
-<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.co.uk/s?k=writing%20grammar%20style%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Level up your writing?">
+<div style="margin:0 auto 24px;max-width:640px;background:#ffffff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #e2e8f0" onclick="window.open('https://www.amazon.co.uk/s?k=writing%20grammar%20style%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Level up your writing?">
   <span style="font-size:28px;flex-shrink:0">📚</span>
   <div style="min-width:0">
-    <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Level up your writing?</div>
-    <div style="font-size:12px;color:#94a3b8">Browse writing & grammar books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
+    <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px">Level up your writing?</div>
+    <div style="font-size:12px;color:#64748b">Browse writing & grammar books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
     <div style="font-size:10px;color:#475569;margin-top:3px">As an Amazon Associate we earn from qualifying purchases.</div>
   </div>
 </div>
-<h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
+<h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
-      <a href="https://typing-speed-test.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Typing Speed Test</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Content Tools</div>
+      <a href="https://typing-speed-test.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#0f172a">Typing Speed Test</div><div style="font-size:11px;color:#64748b;margin-top:2px">Content Tools</div>
       </a>
-      <a href="https://markdown-to-html.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Markdown to HTML</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Content Tools</div>
+      <a href="https://markdown-to-html.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#0f172a">Markdown to HTML</div><div style="font-size:11px;color:#64748b;margin-top:2px">Content Tools</div>
       </a>
-      <a href="https://url-encoder.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#f1f5f9">URL Encoder</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Developer Tools</div>
+      <a href="https://url-encoder.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#0f172a">URL Encoder</div><div style="font-size:11px;color:#64748b;margin-top:2px">Developer Tools</div>
       </a>
-      <a href="https://uuid-generator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#f1f5f9">UUID Generator</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Developer Tools</div>
+      <a href="https://uuid-generator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#0f172a">UUID Generator</div><div style="font-size:11px;color:#64748b;margin-top:2px">Developer Tools</div>
       </a>
     </div>
   </div>
@@ -140,22 +149,22 @@ textarea::placeholder{color:#475569}
 
 <div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:8px;margin-bottom:24px;padding:0 16px">
   <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
-    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
+    <h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Does my text get saved?</div>
-      <div style="font-size:13px;color:#94a3b8;line-height:1.5">No — all processing is done in your browser. Your text never leaves your device.</div>
+      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Does my text get saved?</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.5">No — all processing is done in your browser. Your text never leaves your device.</div>
     </div>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is there a word limit?</div>
-      <div style="font-size:13px;color:#94a3b8;line-height:1.5">No hard limit — the counter handles large documents.</div>
+      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Is there a word limit?</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.5">No hard limit — the counter handles large documents.</div>
     </div>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is this free?</div>
-      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — completely free, no sign-up needed.</div>
+      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Is this free?</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — completely free, no sign-up needed.</div>
     </div>
     <div style="padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Works on mobile?</div>
-      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — works on any device.</div>
+      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Works on mobile?</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — works on any device.</div>
     </div>
   </div>
 </div>
@@ -240,5 +249,11 @@ function copyText() {
   }
 })();
 </script>
+<footer style="border-top:1px solid #e2e8f0;background:#ffffff;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#64748b;line-height:1.8">
+<div style="font-weight:700;color:#0f172a;font-size:15px">⚡ Tabutility</div>
+<div>Free, private, browser-based tools. No sign-up, no tracking.</div>
+<div><a href="https://tabutility.com" style="color:#0f172a;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#64748b;text-decoration:none">Blog</a> · <a href="https://tabutility.com/#about" style="color:#64748b;text-decoration:none">About</a></div>
+<div style="margin-top:6px;color:#94a3b8">© 2026 Tabutility</div>
+</footer>
 </body>
 </html>

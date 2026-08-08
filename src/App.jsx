@@ -57,16 +57,16 @@ export default function WordCounter() {
   const barColor   = pct >= 100 ? '#ef4444' : pct >= 85 ? '#f59e0b' : '#22c55e';
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8f7f4', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', color: '#0f172a' }}>
+    <div style={{ minHeight: '100vh', background: '#f8f7f4', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', color: '#f8f7f4' }}>
 
       {/* ── Nav ── */}
       <nav style={{ borderBottom: '1px solid #e2e8f0', background: 'white', padding: '14px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <a href="https://tabutility.com" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', color: '#0f172a', fontWeight: 700, fontSize: 18 }}>
-          <div style={{ width: 30, height: 30, background: '#0f172a', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 16 }}>⌘</div>
+        <a href="https://tabutility.com" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', color: '#f8f7f4', fontWeight: 700, fontSize: 18 }}>
+          <div style={{ width: 30, height: 30, background: '#f8f7f4', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 16 }}>⌘</div>
           Tabutility
         </a>
         <a href="https://tabutility.com#tools" style={{ fontSize: 13, color: '#64748b', textDecoration: 'none', fontWeight: 500 }}
-          onMouseEnter={e => e.target.style.color = '#0f172a'}
+          onMouseEnter={e => e.target.style.color = '#f8f7f4'}
           onMouseLeave={e => e.target.style.color = '#64748b'}>
           ← All Tools
         </a>
@@ -93,10 +93,10 @@ export default function WordCounter() {
             { label: 'No spaces',       value: stats.charsNoSpaces.toLocaleString(),   color: '#f59e0b', light: '#FFFBEB' },
             { label: 'Sentences',       value: stats.sentences.toLocaleString(),       color: '#ec4899', light: '#FDF2F8' },
             { label: 'Paragraphs',      value: stats.paragraphs.toLocaleString(),      color: '#8b5cf6', light: '#F7F1FF' },
-            { label: 'Reading time',    value: fmtTime(stats.readingTime),             color: '#0ea5e9', light: '#F0F9FF' },
+            { label: 'Reading time',    value: fmtTime(stats.readingTime),             color: '#334155', light: '#F0F9FF' },
             { label: 'Speaking time',   value: fmtTime(stats.speakingTime),            color: '#27C281', light: '#EEFBF5' },
           ].map(s => (
-            <div key={s.label} style={{ background: 'white', borderRadius: 16, padding: '18px 16px', border: '1px solid #f1f5f9', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', textAlign: 'center' }}>
+            <div key={s.label} style={{ background: 'white', borderRadius: 16, padding: '18px 16px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', textAlign: 'center' }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: s.color, marginBottom: 4 }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', fontWeight: 500 }}>{s.label}</div>
             </div>
@@ -104,16 +104,16 @@ export default function WordCounter() {
         </div>
 
         {/* Character limit checker */}
-        <div style={{ background: 'white', borderRadius: 16, padding: '20px 24px', border: '1px solid #f1f5f9', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-          <p style={{ margin: '0 0 12px', fontSize: 13, fontWeight: 700, color: '#0f172a' }}>Character limit checker</p>
+        <div style={{ background: 'white', borderRadius: 16, padding: '20px 24px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+          <p style={{ margin: '0 0 12px', fontSize: 13, fontWeight: 700, color: '#f8f7f4' }}>Character limit checker</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {LIMITS.map(l => (
               <button key={l.label}
                 onClick={() => setLimit(activeLimit === l.label ? null : l.label)}
                 style={{ padding: '6px 14px', borderRadius: 8, border: '1px solid', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.15s',
-                  background: activeLimit === l.label ? '#0f172a' : 'white',
+                  background: activeLimit === l.label ? '#f8f7f4' : 'white',
                   color: activeLimit === l.label ? 'white' : '#475569',
-                  borderColor: activeLimit === l.label ? '#0f172a' : '#e2e8f0' }}>
+                  borderColor: activeLimit === l.label ? '#f8f7f4' : '#e2e8f0' }}>
                 {l.label} ({l.max})
               </button>
             ))}
@@ -126,7 +126,7 @@ export default function WordCounter() {
                   {charsOver > 0 ? `${charsOver} over limit` : `${limitData.max - stats.chars} remaining`}
                 </span>
               </div>
-              <div style={{ height: 8, background: '#f1f5f9', borderRadius: 999, overflow: 'hidden' }}>
+              <div style={{ height: 8, background: '#0f172a', borderRadius: 999, overflow: 'hidden' }}>
                 <div style={{ height: '100%', width: `${pct}%`, background: barColor, borderRadius: 999, transition: 'all 0.3s' }} />
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function WordCounter() {
 
         {/* Textarea */}
         <div style={{ background: 'white', borderRadius: 20, border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', overflow: 'hidden' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 20px', borderBottom: '1px solid #f1f5f9' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 20px', borderBottom: '1px solid #0f172a' }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: '#64748b' }}>Your text</span>
             <div style={{ display: 'flex', gap: 8 }}>
               <button onClick={handleCopy} disabled={!text}
@@ -152,13 +152,13 @@ export default function WordCounter() {
             value={text}
             onChange={e => setText(e.target.value)}
             placeholder="Start typing or paste your text here…"
-            style={{ width: '100%', minHeight: 320, padding: '20px', fontSize: 15, lineHeight: 1.7, color: '#0f172a', border: 'none', outline: 'none', resize: 'vertical', fontFamily: 'inherit', boxSizing: 'border-box', background: 'transparent' }}
+            style={{ width: '100%', minHeight: 320, padding: '20px', fontSize: 15, lineHeight: 1.7, color: '#f8f7f4', border: 'none', outline: 'none', resize: 'vertical', fontFamily: 'inherit', boxSizing: 'border-box', background: 'transparent' }}
           />
         </div>
 
         {/* Tips */}
-        <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: '1px solid #f1f5f9', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-          <h2 style={{ margin: '0 0 16px', fontSize: 16, fontWeight: 700, color: '#0f172a' }}>Quick reference — common word counts</h2>
+        <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: '1px solid #0f172a', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+          <h2 style={{ margin: '0 0 16px', fontSize: 16, fontWeight: 700, color: '#f8f7f4' }}>Quick reference — common word counts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
             {[
               ['Tweet',               '< 280 chars'],
@@ -172,7 +172,7 @@ export default function WordCounter() {
             ].map(([type, count]) => (
               <div key={type} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#f8f7f4', borderRadius: 8, fontSize: 13 }}>
                 <span style={{ color: '#475569', fontWeight: 500 }}>{type}</span>
-                <span style={{ color: '#0f172a', fontWeight: 700 }}>{count}</span>
+                <span style={{ color: '#f8f7f4', fontWeight: 700 }}>{count}</span>
               </div>
             ))}
           </div>
@@ -181,7 +181,7 @@ export default function WordCounter() {
       </div>
 
       {/* ── Footer ── */}
-      <footer style={{ background: 'white', borderTop: '1px solid #f1f5f9', padding: '24px', textAlign: 'center', fontSize: 13, color: '#94a3b8' }}>
+      <footer style={{ background: 'white', borderTop: '1px solid #0f172a', padding: '24px', textAlign: 'center', fontSize: 13, color: '#64748b' }}>
         <a href="https://tabutility.com" style={{ color: '#64748b', textDecoration: 'none', fontWeight: 600 }}>Tabutility.com</a>
         {' · '}Free browser-based tools · No sign-up · No tracking
       </footer>
